@@ -1,3 +1,28 @@
-h3 {
-  color: blue;
+.mainBox {
+  margin-top: 10px;
+}
+
+.image-gallery {
+  margin: 0 auto;
+  width: 65%;
+}
+/*.image-gallery-image {
+  height: 85vh;
+}
+.image-gallery-slide img {
+    width: 100%;
+    display:block;
+    margin:auto;
+}*/
+
+.image-gallery-bullets {
+  bottom: -40px;
+}
+
+.image-gallery-bullets .image-gallery-bullet {
+  border-color: black;
+}
+
+.image-gallery-bullets .image-gallery-bullet.active {
+  background: red;
 }

@@ -2,18 +2,9 @@ import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
 import css from '../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
 import styles from './Home.css';
+import { Intent, Spinner, DatePickerFactory, Navar } from "@blueprintjs/core"
 
-// export default class Home extends Component {
-//   render() {
-//     return (
-//       <div className='home'>
-//         <h3>Welcome to the home page.</h3>
-//         <MyComponent />
-//       </div>
-//     );
-//   }
-// }
-export default class MyComponent extends React.Component {
+export default class HomePage extends React.Component {
 
   handleImageLoad(event) {
     console.log('Image loaded ', event.target)
@@ -37,13 +28,28 @@ export default class MyComponent extends React.Component {
     ]
 
     return (
-      <div>
+      <div className="mainBox">
+        <nav className="pt-navbar .modifier pt-fixed-top ">
+          <div className="pt-navbar-group pt-align-left">
+            <div className="pt-navbar-heading">Proof Positive Imaging</div>
+            <input className="pt-input" placeholder="Search files..." type="text" />
+          </div>
+          <div className="pt-navbar-group pt-align-right">
+            <button className="pt-button pt-minimal pt-icon-home">Home</button>
+            <button className="pt-button pt-minimal pt-icon-document">Files</button>
+            <span className="pt-navbar-divider"></span>
+            <button className="pt-button pt-minimal pt-icon-user"></button>
+            <button className="pt-button pt-minimal pt-icon-notifications"></button>
+            <button className="pt-button pt-minimal pt-icon-cog"></button>
+          </div>
+        </nav>
       <ImageGallery
         items={ images }
         slideInterval={ 2000 }
         onImageLoad={ this.handleImageLoad }
         showBullets
         showFullscreenButton={ false }
+        showThumbnails={ false}
       />
       </div>
     );

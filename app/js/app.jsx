@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import App from './views/App';
 import Home from './views/Home/Home';
 import About from './views/About/About';
+require('!style!css!@blueprintjs/core/dist/blueprint.css');
 
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 

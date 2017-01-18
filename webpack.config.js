@@ -28,7 +28,10 @@ module.exports = {
       {
         test: /\.css$/,
         loaders: [ 'style-loader', 'css-loader' ]
-      }
+      },
+      {
+        test: /\.(eot|ttf|wav|mp3|woff)$/,
+        loader: 'file-loader' },
     ],
   },
 };
