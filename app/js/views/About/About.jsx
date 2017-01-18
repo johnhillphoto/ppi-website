@@ -1,11 +1,23 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Test from '../../components/global/Menu.jsx';
+console.log(Test);
 
-export default class About extends Component {
-  render() {
+
+const About = () => {
     return (
-      <div className='about'>
-        Welcome to the about page.
-      </div>
-    );
-  }
-}
+        <div> 
+        <h1>This is the about page.</h1>
+         <Test myName='fuck' />
+        </div>
+    )
+};
+
+export default About;
+
+// import React from ‘react’;
+
+// const HelloWorld = ({name}) => (
+//  <div>{`Hi ${name}`}</div>
+// );
+
+// export default HelloWorld;

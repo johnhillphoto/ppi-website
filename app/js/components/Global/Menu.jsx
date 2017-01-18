@@ -1,19 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Menu extends Component {
-  render() {
-    return (
-      <div className='Menu'>
-        Welcome to the app. Hi there, meow.
-      </div>
-    );
-  }
-}
+const Test = ({ myName }) => (
+  <h1>{`This is the test page. Mr. ${myName}`}</h1>
+);
 
-// function Menu({ onClick, option }) {
-//     return (
-//         <li onClick={onClick}>
-//             {option}
-//         </li>
-//     );
-// }
+Test.propTypes = {
+  myName: React.PropTypes.string,
+};
+
+Test.defaultProps = {
+  myName: "A name",
+};
+
+export default Test;

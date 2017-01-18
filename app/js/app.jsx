@@ -11,7 +11,7 @@ ReactDOM.render(
   <Router history={ browserHistory }>
     <Route path='/' component={ App }>
       <IndexRoute component={ Home } />
-      <Route path='about' component={ About } />
+      <Route path='about' component={ About } myName='John Hill' />
     </Route>
   </Router>,
   document.getElementById('app')
