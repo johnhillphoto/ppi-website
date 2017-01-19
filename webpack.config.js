@@ -27,11 +27,15 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loaders: [ 'style-loader', 'css-loader' ]
+        loaders: ['style-loader', 'css-loader'],
       },
       {
         test: /\.(eot|ttf|wav|mp3|woff)$/,
         loader: 'file-loader' },
-    ],
-  },
-};
+      {
+        test: /\.scss$/,
+        loaders: ["style-loader", "css-loader", "sass-loader"]
+      },
+    ]
+    },
+}

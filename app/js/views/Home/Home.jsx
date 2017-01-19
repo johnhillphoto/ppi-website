@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ImageGallery from 'react-image-gallery';
 import css from '../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
-import styles from './Home.css';
+// import styles from './Home.css';
+require("!style-loader!css-loader!sass-loader!./Home.scss");
+
 import { Intent, Spinner, DatePickerFactory, Navar } from "@blueprintjs/core"
 
 export default class HomePage extends React.Component {
@@ -51,6 +53,7 @@ export default class HomePage extends React.Component {
         showFullscreenButton={ false }
         showThumbnails={ false}
       />
+    <h3 className='scssTest'>This is a test of scss</h3>
       </div>
     );
   }
