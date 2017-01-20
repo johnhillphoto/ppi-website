@@ -1,35 +1,59 @@
-$font-stack:    serif;
-$primary-color: blue;
+// $font-stack:    serif;
+// $primary-color: blue;
+body {
+  font-family: 'Raleway', sans-serif;
+}
 
 .mainBox {
+  font-family: 'Raleway', sans-serif;
   margin-top: 10px;
-  .scssTest {
-    font: 100% $font-stack;
-    color: $primary-color;
-  }
+  // .image-gallery {
+  //   margin: 0 auto;
+  //   width: 65%;
+  // }
 
-  .image-gallery {
-    margin: 0 auto;
-    width: 65%;
-  }
-  /*.image-gallery-image {
-    height: 85vh;
+  .image-gallery-image {
+    // height: 85vh;
   }
   .image-gallery-slide img {
       width: 100%;
       display:block;
       margin:auto;
-  }*/
-
-  .image-gallery-bullets {
-    bottom: -40px;
+    }
+  .pt-navbar {
+    height: 68px
   }
-
-  .image-gallery-bullets .image-gallery-bullet {
-    border-color: black;
+  .pt-navbar-heading {
+    background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-Vector-68.svg);
+    width: 425px;
+    height: 68px;
   }
-
-  .image-gallery-bullets .image-gallery-bullet.active {
-    background: red;
+  .pt-navbar-group {
+    height: 68px;
+  }
+  .pt-button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+  }
+  .catButtons {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .hoveredTopButton {
+    background-color: red;
   }
 }
+
+
+//   .image-gallery-bullets {
+//     bottom: -40px;
+//   }
+//
+//   .image-gallery-bullets .image-gallery-bullet {
+//     border-color: black;
+//   }
+//
+//   .image-gallery-bullets .image-gallery-bullet.active {
+//     background: red;
+//   }
+// }

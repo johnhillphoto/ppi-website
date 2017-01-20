@@ -1,13 +1,11 @@
 import React from 'react';
 import Test from '../../components/global/Menu.jsx';
-console.log(Test);
-
 
 const About = () => {
     return (
-        <div> 
+        <div>
         <h1>This is the about page.</h1>
-         <Test myName='fuck' />
+         <Test myName='Henry Cat' />
         </div>
     )
 };

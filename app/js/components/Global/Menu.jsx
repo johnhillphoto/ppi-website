@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Test = ({ myName }) => (
-  <h1>{`This is the test page. Mr. ${myName}`}</h1>
+  <h1>{`This is a test of things for Mr. ${myName}`}</h1>
 );
 
 Test.propTypes = {
