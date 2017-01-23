@@ -1,0 +1,88 @@
+// $font-stack:    serif;
+$logo-color: #2b3269;
+body {
+  font-family: 'Raleway', sans-serif;
+}
+.image-gallery {
+  position: fixed;
+  top: 0;
+}
+
+.mainBox {
+  font-family: 'Raleway', sans-serif;
+  // margin-top: 10px;
+  // .image-gallery {
+  //   margin: 0 auto;
+  //   width: 65%;
+  // }
+
+  .image-gallery-image {
+    // height: 85vh;
+  }
+  .image-gallery-slide img {
+      width: 100%;
+      display:block;
+      margin:auto;
+    }
+    .image-gallery-fullscreen-button::before, .image-gallery-play-button::before, .image-gallery-left-nav::before, .image-gallery-right-nav::before {
+      text-shadow: none;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .image-gallery-fullscreen-button:focus, .image-gallery-play-button:focus, .image-gallery-left-nav:focus, .image-gallery-right-nav:focus {
+      outline: none;
+    }
+    .image-gallery-fullscreen-button:hover, .image-gallery-play-button:hover, .image-gallery-left-nav:hover, .image-gallery-right-nav:hover {
+      outline: none;
+    }
+.image-gallery-fullscreen-button:hover::before, .image-gallery-play-button:hover::before, .image-gallery-left-nav:hover::before, .image-gallery-right-nav:hover::before {
+      color:: white;
+    }
+  .pt-navbar {
+    height: 68px;
+    background-color: rgba(255, 255, 255, 0.85);
+    box-shadow: none;
+  }
+  .pt-navbar
+  .pt-navbar-heading {
+    background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-Vector-black-68.svg);
+    width: 425px;
+    height: 68px;
+  }
+  .pt-navbar-group {
+    height: 68px;
+  }
+  .pt-button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+  }
+  .catButtons {
+    color: black;
+    font-size: 17px;
+    font-weight: 200;
+    width: 150px;
+    height: 100%;
+    line-height: 95px;
+    text-align: center;
+  }
+  .hoveredTopButton {
+    background-color: rgba(167, 167, 167, 0.15);
+  }
+  .catButtonsRight {
+    width: 80px;
+  }
+
+}
+
+
+//   .image-gallery-bullets {
+//     bottom: -40px;
+//   }
+//
+//   .image-gallery-bullets .image-gallery-bullet {
+//     border-color: black;
+//   }
+//
+//   .image-gallery-bullets .image-gallery-bullet.active {
+//     background: red;
+//   }
+// }

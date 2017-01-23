@@ -4,7 +4,9 @@ import { browserHistory } from 'react-router';
 import ImageGallery from 'react-image-gallery';
 import css from '../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
 
-require("!style-loader!css-loader!sass-loader!./Home.scss");
+// require("!style-loader!css-loader!sass-loader!./Home.scss");
+require('./Home.scss');
+
 import classNames from 'classnames';
 
 export default class HomePage extends Component {
@@ -61,22 +63,22 @@ export default class HomePage extends Component {
   render() {
     const images = [
       {
-        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40118 Bottle & Horseshoe 0587.jpg',
-        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40118 Bottle & Horseshoe 0587.jpg',
+        original: 'https://s3.amazonaws.com/ppi-images/portfolio/400118 Portfolio 0957.jpg',
+        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/400118 Portfolio 0957.jpg',
         destination: '/About',
       },
       {
-        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40122_Portfolio1892.jpg',
-        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40122_Portfolio1892.jpg',
+        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40120 Wet Kale 1299.jpg',
+        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40120 Wet Kale 1299.jpg',
         destination: '/About',
       },
       {
-        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40121_Portfolio1663.jpg',
-        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40121_Portfolio1663.jpg',
+        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40125+Greenwich+Bay+Shea+Butter+Spa+Soap+2351.jpg',
+        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40125+Greenwich+Bay+Shea+Butter+Spa+Soap+2351.jpg',
         destination: '/About',
       }
     ];
-    let btnClassA, btnClassB, btnClassC;
+    let btnClassA, btnClassB, btnClassC, btnClassD, btnClassE;
     btnClassA = classNames({
     'catButtons': true,
     'hoveredTopButton': this.state.hoveredA
@@ -89,6 +91,16 @@ export default class HomePage extends Component {
     'catButtons': true,
     'hoveredTopButton': this.state.hoveredC
     });
+    btnClassD = classNames({
+    'catButtons': true,
+    'catButtonsRight': true,
+    'hoveredTopButton': this.state.hoveredD
+    });
+    btnClassE = classNames({
+    'catButtons': true,
+    'catButtonsRight': true,
+    'hoveredTopButton': this.state.hoveredE
+    });
 
     return (
       <div className="mainBox">
@@ -98,31 +110,36 @@ export default class HomePage extends Component {
             <div className={btnClassA}
               onMouseEnter={() => this._handleHover('hoveredA')}
               onMouseLeave={() => this._handleLeaveHover('hoveredA')}
-              ><button className="pt-button pt-minimal">Food & Drink</button></div>
+              >Food & Drink</div>
             <div className={btnClassB}
                 onMouseEnter={() => this._handleHover('hoveredB')}
                 onMouseLeave={() => this._handleLeaveHover('hoveredB')}
-                ><button className="pt-button pt-minimal">Product</button></div>
+                >Product</div>
               <div className={btnClassC}
                     onMouseEnter={() => this._handleHover('hoveredC')}
                     onMouseLeave={() => this._handleLeaveHover('hoveredC')}
-                    ><button className="pt-button pt-minimal">Other</button></div>
+                    >Other</div>
           </div>
           <div className="pt-navbar-group pt-align-right">
-            <button className="pt-button pt-minimal pt-icon-home">Home</button>
-            <button className="pt-button pt-minimal pt-icon-document">Files</button>
+            <div className={btnClassD}
+                  onMouseEnter={() => this._handleHover('hoveredD')}
+                  onMouseLeave={() => this._handleLeaveHover('hoveredD')}
+                  >About</div>
             <span className="pt-navbar-divider"></span>
-            <button className="pt-button pt-minimal pt-icon-user"></button>
-            <button className="pt-button pt-minimal pt-icon-notifications"></button>
-            <button className="pt-button pt-minimal pt-icon-cog"></button>
+              <div className={btnClassE}
+                    onMouseEnter={() => this._handleHover('hoveredE')}
+                    onMouseLeave={() => this._handleLeaveHover('hoveredE')}
+                    >Contact</div>
           </div>
         </nav>
       <ImageGallery
         items={ images }
-        slideInterval={ 2000 }
+        autoPlay= { true }
+        slideDuration={ 600 }
+        slideInterval={ 4000 }
         onImageLoad={ this.handleImageLoad }
         showBullets
-        showFullscreenButton={ false }
+        showFullscreenButton={ true }
         showThumbnails={ false }
         renderItem={ this._renderItem }
       />

@@ -8,9 +8,6 @@ export default class App extends Component {
 
     return (
       <div className='App'>
-        <Link to='/'>Home inside App</Link>
-        <Link to='/about'>About</Link>
-
         { children }
       </div>
     );
