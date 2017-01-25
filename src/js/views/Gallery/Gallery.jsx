@@ -15,12 +15,16 @@ export default class GalleryWrapper extends Component {
   }
 
   render() {
+    let category = this.props.route.category;
+    // filter down files to only match our category
+    let fileNamesFiltered = fileNames.filter(name => {
+      return name.category === category;
+    });
     return (
       <div className='gallery'>
-        <Nav category={this.props.category}/>
-        <h3>{`We are inside ${this.props.category}`}</h3>
+        <Nav category={category}/>
           <Gallery
-            images={ fileNames }
+            images={ fileNamesFiltered }
             enableImageSelection={ false }
             rowHeight={ 225 }
             />
