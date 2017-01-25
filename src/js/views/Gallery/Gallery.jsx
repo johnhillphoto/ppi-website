@@ -24,6 +24,7 @@ export default class GalleryWrapper extends Component {
       <div className='gallery'>
         <Nav category={category}/>
           <Gallery
+            className='galleryMain'
             images={ fileNamesFiltered }
             enableImageSelection={ false }
             rowHeight={ 225 }

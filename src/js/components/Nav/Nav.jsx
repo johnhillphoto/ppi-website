@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
+import { Button, Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
+import classNames from 'classnames';
 
 require('./Nav.scss');
 
-import classNames from 'classnames';
 
-export default class Nav extends Component {
+export default class NavComponent extends Component {
   constructor(props) {
     super(props);
 
@@ -56,36 +57,35 @@ export default class Nav extends Component {
     });
 
     return (
-      <div className="navBox">
-        <nav className="pt-navbar .modifier pt-fixed-top ">
-          <div className="pt-navbar-group pt-align-left">
-            <div className="pt-navbar-heading"></div>
-            <div className={btnClassA}
-              onMouseEnter={() => this._handleHover('foodDrink')}
-              onMouseLeave={() => this._handleLeaveHover('foodDrink')}
-              >Food & Drink</div>
-            <div className={btnClassB}
-                onMouseEnter={() => this._handleHover('product')}
-                onMouseLeave={() => this._handleLeaveHover('product')}
-                >Product</div>
-              <div className={btnClassC}
-                    onMouseEnter={() => this._handleHover('other')}
-                    onMouseLeave={() => this._handleLeaveHover('other')}
-                    >Other</div>
-          </div>
-          <div className="pt-navbar-group pt-align-right">
-            <div className={btnClassD}
-                  onMouseEnter={() => this._handleHover('about')}
-                  onMouseLeave={() => this._handleLeaveHover('about')}
-                  >About</div>
-            <span className="pt-navbar-divider"></span>
-              <div className={btnClassE}
-                    onMouseEnter={() => this._handleHover('contact')}
-                    onMouseLeave={() => this._handleLeaveHover('contact')}
-                    >Contact</div>
-          </div>
-        </nav>
-      </div>
+        <Navbar
+          collapseOnSelect
+          className='navBox'>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">P<span className='smaller'>roof </span>P<span className='smaller'>ositive </span>I<span className='smaller'>maging</span> <span className='smaller nocaps'>inc</span></a>
+            </Navbar.Brand>
+              <Navbar.Toggle />
+          </Navbar.Header>
+
+          <Navbar.Collapse>
+                <Nav pullLeft>
+                  <NavItem eventKey={1} href="#">Food & Drink</NavItem>
+                  <NavItem eventKey={2} href="#">Product</NavItem>
+                  <NavDropdown eventKey={3} title="Other" id="basic-nav-dropdown">
+                    <MenuItem eventKey={3.1}>Some Photos</MenuItem>
+                    <MenuItem eventKey={3.2}>Some Photos 2</MenuItem>
+                    <MenuItem eventKey={3.3}>Some Photos 3</MenuItem>
+                    <MenuItem divider />
+                    <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                  </NavDropdown>
+                </Nav>
+                <Nav pullRight>
+                  <NavItem className='catButtonsRight' eventKey={1} href="#">About</NavItem>
+                  <NavItem className='catButtonsRight' eventKey={2} href="#">Contact</NavItem>
+                </Nav>
+          </Navbar.Collapse>
+
+        </Navbar>
     );
   }
 
