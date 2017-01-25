@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
+// var Hjson = require('hjson');
 
 import ImageGallery from 'react-image-gallery';
 import css from '../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
 
+import {fileNames} from './fileNames.jsx';
+const images = fileNames;
+// import fileNamesTest from './fileNames.json';
+// let fileNamesTestParsed = Hjson.parse(fileNamesTest);
+// console.log(fileNamesTest);
 // require("!style-loader!css-loader!sass-loader!./Home.scss");
 require('./Home.scss');
 
@@ -14,9 +20,11 @@ export default class HomePage extends Component {
     super(props);
 
     this.state = {
-      hoveredA: false,
-      hoveredB: false,
-      hoveredC: false
+      foodDrink: false,
+      product: false,
+      other: false,
+      about: false,
+      contact: false,
     }
   }
 
@@ -31,75 +39,56 @@ export default class HomePage extends Component {
       browserHistory.push(item.destination)
     }
 
-      return (
-        <div className='image-gallery-image'>
-          <img
-              src={item.original}
-              alt={item.originalAlt}
-              srcSet={item.srcSet}
-              sizes={item.sizes}
-              onClick={_onClick}
-          />
-          {
-            item.description &&
-              <span className='image-gallery-description'>
-                {item.description}
-              </span>
-          }
-        </div>
-      )
+    return (
+      <div className='image-gallery-image'>
+        <img
+          src={ item.original }
+          alt={ item.originalAlt }
+          srcSet={ item.srcSet }
+          sizes={ item.sizes }
+          onClick={ _onClick }
+        />
+        {
+          item.description &&
+            <span className='image-gallery-description'>
+              {item.description}
+            </span>
+        }
+      </div>
+    )
   }
-  _handleHover(incoming){
-    let hovered = incoming;
-    const thing = {[hovered]: true}
+  _handleHover(incoming) {
+    const thing = { [incoming]: true };
     this.setState(thing);
   }
-  _handleLeaveHover(incoming){
-    let hovered = incoming;
-    const thing = {[hovered]: false}
+  _handleLeaveHover(incoming) {
+    const thing = { [incoming]: false };
     this.setState(thing);
   }
 
   render() {
-    const images = [
-      {
-        original: 'https://s3.amazonaws.com/ppi-images/portfolio/400118 Portfolio 0957.jpg',
-        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/400118 Portfolio 0957.jpg',
-        destination: '/About',
-      },
-      {
-        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40120 Wet Kale 1299.jpg',
-        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40120 Wet Kale 1299.jpg',
-        destination: '/About',
-      },
-      {
-        original: 'https://s3.amazonaws.com/ppi-images/portfolio/40125+Greenwich+Bay+Shea+Butter+Spa+Soap+2351.jpg',
-        thumbnail: 'https://s3.amazonaws.com/ppi-images/portfolio/40125+Greenwich+Bay+Shea+Butter+Spa+Soap+2351.jpg',
-        destination: '/About',
-      }
-    ];
     let btnClassA, btnClassB, btnClassC, btnClassD, btnClassE;
     btnClassA = classNames({
     'catButtons': true,
-    'hoveredTopButton': this.state.hoveredA
+    'hoveredTopButton': this.state.foodDrink
     });
     btnClassB = classNames({
     'catButtons': true,
-    'hoveredTopButton': this.state.hoveredB
+    'hoveredTopButton': this.state.product
     });
     btnClassC = classNames({
     'catButtons': true,
-    'hoveredTopButton': this.state.hoveredC
+    'hoveredTopButton': this.state.other
     });
     btnClassD = classNames({
     'catButtons': true,
     'catButtonsRight': true,
-    'hoveredTopButton': this.state.hoveredD
+    'hoveredTopButton': this.state.about
     });
     btnClassE = classNames({
     'catButtons': true,
     'catButtonsRight': true,
-    'hoveredTopButton': this.state.hoveredE
+    'hoveredTopButton': this.state.contact
     });
 
     return (
@@ -108,27 +97,27 @@ export default class HomePage extends Component {
           <div className="pt-navbar-group pt-align-left">
             <div className="pt-navbar-heading"></div>
             <div className={btnClassA}
-              onMouseEnter={() => this._handleHover('hoveredA')}
-              onMouseLeave={() => this._handleLeaveHover('hoveredA')}
+              onMouseEnter={ () => this._handleHover('foodDrink') }
+              onMouseLeave={ () => this._handleLeaveHover('foodDrink') }
               >Food & Drink</div>
-            <div className={btnClassB}
-                onMouseEnter={() => this._handleHover('hoveredB')}
-                onMouseLeave={() => this._handleLeaveHover('hoveredB')}
+            <div className={ btnClassB }
+                onMouseEnter={ () => this._handleHover('product') }
+                onMouseLeave={ () => this._handleLeaveHover('product') }
                 >Product</div>
               <div className={btnClassC}
-                    onMouseEnter={() => this._handleHover('hoveredC')}
-                    onMouseLeave={() => this._handleLeaveHover('hoveredC')}
+                    onMouseEnter={ () => this._handleHover('other') }
+                    onMouseLeave={ () => this._handleLeaveHover('other')}
                     >Other</div>
           </div>
           <div className="pt-navbar-group pt-align-right">
             <div className={btnClassD}
-                  onMouseEnter={() => this._handleHover('hoveredD')}
-                  onMouseLeave={() => this._handleLeaveHover('hoveredD')}
+                  onMouseEnter={() => this._handleHover('about')}
+                  onMouseLeave={() => this._handleLeaveHover('about')}
                   >About</div>
             <span className="pt-navbar-divider"></span>
               <div className={btnClassE}
-                    onMouseEnter={() => this._handleHover('hoveredE')}
-                    onMouseLeave={() => this._handleLeaveHover('hoveredE')}
+                    onMouseEnter={() => this._handleHover('contact')}
+                    onMouseLeave={() => this._handleLeaveHover('contact')}
                     >Contact</div>
           </div>
         </nav>

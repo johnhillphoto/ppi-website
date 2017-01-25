@@ -17,12 +17,12 @@ body {
   // }
 
   .image-gallery-image {
-    // height: 85vh;
+    // top: 200px;
   }
   .image-gallery-slide img {
-      width: 100%;
-      display:block;
-      margin:auto;
+      // width: 100%;
+      // display:block;
+      // margin:auto;
     }
     .image-gallery-fullscreen-button::before, .image-gallery-play-button::before, .image-gallery-left-nav::before, .image-gallery-right-nav::before {
       text-shadow: none;
@@ -71,7 +71,73 @@ body {
     width: 80px;
   }
 
-}
+  @media screen and (min-aspect-ratio: 118/80) {
+    .image-gallery-bullets {
+      top: 90vh;
+    }
+    .image-gallery-fullscreen-button, .image-gallery-play-button {
+      top: 82vh;
+    }
+    // .image-gallery-bullets .image-gallery-bullet.active {
+    //   background: black;
+    // }
+    .image-gallery-left-nav, .image-gallery-right-nav {
+      top: 50vh;
+    }
+    .image-gallery-slide img {
+      position: relative;
+      top: -2.7vw;
+    }
+  }
+  @media screen and (min-aspect-ratio: 125/80) {
+    .image-gallery-fullscreen-button, .image-gallery-play-button {
+      top: 79vh;
+    }
+    // .image-gallery-bullets .image-gallery-bullet.active {
+    //   background: pink;
+    // }
+    .image-gallery-slide img {
+      position: relative;
+      top: -3.7vw;
+    }
+  }
+  @media screen and (min-aspect-ratio: 132/80) {
+    .image-gallery-fullscreen-button, .image-gallery-play-button {
+      top: 69vh;
+    }
+    // .image-gallery-bullets .image-gallery-bullet.active {
+    //   background: red;
+    // }
+    .image-gallery-slide img {
+      position: relative;
+      top: -4.7vw;
+    }
+  }
+  @media screen and (min-aspect-ratio: 140/80) {
+    .image-gallery-fullscreen-button, .image-gallery-play-button {
+      top: 59vh;
+    }
+    // .image-gallery-bullets .image-gallery-bullet.active {
+    //   background: purple;
+    // }
+    .image-gallery-slide img {
+      position: relative;
+      top: -5.7vw;
+    }
+  }
+  @media screen and (min-aspect-ratio: 148/80) {
+    .image-gallery-fullscreen-button, .image-gallery-play-button {
+      top: 39vh;
+    }
+    // .image-gallery-bullets .image-gallery-bullet.active {
+    //   background: black;
+    // }
+    .image-gallery-slide img {
+      position: relative;
+      top: -6.7vw;
+    }
+  }
+} // end total block
 
 
 //   .image-gallery-bullets {
