@@ -6,7 +6,27 @@ $logo-color: #2b3269;
   background-color: white;
   box-shadow: none;
   margin-bottom: 0;
+  z-index: 2000;
 
+  .gridIcon {
+    background-image: url(https://s3.amazonaws.com/ppi-images/grid_icon.svg);
+    width: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+  }
+  .hideGridIcon {
+    visibility: hidden;
+  }
+
+  .navbar-header {
+    background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-Vector-black-68.svg);
+    height: 50px;
+    width: 300px;
+    background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: center center;
+  }
   .container {
     margin-left: 0;
     margin-right: 0;
@@ -27,16 +47,51 @@ $logo-color: #2b3269;
   .nocaps {
     text-transform: lowercase;
   }
+  button.navbar-toggle{
+    right: 10vw;
+    position: fixed;
+  }
+  .navbar-collapse.dropdown-toggle {
+    position: fixed;
+    right: 10vw;
+    z-index: 2000;
+    background-color: white;
+    padding-right: 15px;
+    padding-left: 15px;
+    overflow-x: hidden;
+  }
+  .hoveredTopButton {
+    background-color: rgba(167, 167, 167, 0.16);
+  }
 
+  @media only screen and (max-width: 767px) {
+    .navbar-collapse{
+      background-color: rgba(248,248,248,0.85);
+      position: fixed;
+      width: auto;
+      padding-right: 40px;
+      padding-left: 40px;
+      right: 10vw;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .rightButtonGroup {
+      position: fixed;
+      right: 5vw;
+    }
+  }
 
   @media only screen and (min-width: 993px) {
     height: 68px;
 
-    .navbar-header {
-      background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-Vector-black-68.svg);
-      width: 425px;
-      height: 68px;
+    ul.nav.navbar-nav.navbar-left {
+      margin-left: 25px;
     }
+    .navbar-header {
+      height: 68px;
+      width: 425px;
+    }
+
     .navbar-brand {
       visibility: hidden;
     }
@@ -47,15 +102,9 @@ $logo-color: #2b3269;
       line-height: 68px;
       text-align: center;
     }
+
   }
 
-  // .pt-navbar-group {
-  //   height: 68px;
-  // }
-  // .pt-button {
-  //   font-family: 'Raleway', sans-serif;
-  //   font-size: 20px;
-  // }
   // li {
   //   color: black;
   //   font-size: 17px;
@@ -64,9 +113,7 @@ $logo-color: #2b3269;
   //   height: 100%;
   //   text-align: center;
   // }
-  // .hoveredTopButton {
-  //   background-color: rgba(167, 167, 167, 0.15);
-  // }
+
   // .catButtonsRight {
   //   width: 80px;
   // }

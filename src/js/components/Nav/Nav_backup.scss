@@ -1,0 +1,77 @@
+$logo-color: #2b3269;
+
+
+.navBox {
+  font-family: 'Raleway', sans-serif;
+  background-color: white;
+  box-shadow: none;
+  margin-bottom: 0;
+
+  .container {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    position: absolute;
+    z-index: 2000;
+    background-color: white;
+  }
+  .navbar-brand {
+    font-weight: 500;
+    color: black;
+    font-size: 24px;
+    text-transform: uppercase;
+  }
+  .smaller {
+    font-size: 19px;
+  }
+  .nocaps {
+    text-transform: lowercase;
+  }
+
+
+  @media only screen and (min-width: 993px) {
+    height: 68px;
+
+    .navbar-header {
+      background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-Vector-black-68.svg);
+      width: 325px;
+      height: 68px;
+      background-size:     contain;
+      background-repeat:   no-repeat;
+      background-position: center center;
+    }
+    .navbar-brand {
+      visibility: hidden;
+    }
+    .navbar-nav>li>a {
+      font-size: 17px;
+      font-weight: 200;
+      height: 68px;
+      line-height: 68px;
+      text-align: center;
+    }
+  }
+
+  // .pt-navbar-group {
+  //   height: 68px;
+  // }
+  // .pt-button {
+  //   font-family: 'Raleway', sans-serif;
+  //   font-size: 20px;
+  // }
+  // li {
+  //   color: black;
+  //   font-size: 17px;
+  //   font-weight: 200;
+  //   width: 135px;
+  //   height: 100%;
+  //   text-align: center;
+  // }
+  // .hoveredTopButton {
+  //   background-color: rgba(167, 167, 167, 0.15);
+  // }
+  // .catButtonsRight {
+  //   width: 80px;
+  // }
+
+}// end overall

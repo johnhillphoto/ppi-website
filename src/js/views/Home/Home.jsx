@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
-// var Hjson = require('hjson');
-
+import Nav from '../../components/Nav/Nav.jsx';
 import ImageGallery from 'react-image-gallery';
 import css from '../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
 
@@ -12,6 +11,7 @@ const images = fileNames;
 // console.log(fileNamesTest);
 // require("!style-loader!css-loader!sass-loader!./Home.scss");
 require('./Home.scss');
+require('../Gallery/imageGallery.scss');
 
 import classNames from 'classnames';
 
@@ -36,7 +36,11 @@ export default class HomePage extends Component {
 
     const _onClick = () => {
       console.log('I clicked this: ', item.destination);
-      browserHistory.push(item.destination)
+      // browserHistory.push(`${item.destination}/true`);
+      browserHistory.push({
+        pathname: item.destination,
+        state: { gridMode: false },
+      });
     }
 
     return (
@@ -67,60 +71,9 @@ export default class HomePage extends Component {
   }
 
   render() {
-    let btnClassA, btnClassB, btnClassC, btnClassD, btnClassE;
-    btnClassA = classNames({
-    'catButtons': true,
-    'hoveredTopButton': this.state.foodDrink
-    });
-    btnClassB = classNames({
-    'catButtons': true,
-    'hoveredTopButton': this.state.product
-    });
-    btnClassC = classNames({
-    'catButtons': true,
-    'hoveredTopButton': this.state.other
-    });
-    btnClassD = classNames({
-    'catButtons': true,
-    'catButtonsRight': true,
-    'hoveredTopButton': this.state.about
-    });
-    btnClassE = classNames({
-    'catButtons': true,
-    'catButtonsRight': true,
-    'hoveredTopButton': this.state.contact
-    });
-
     return (
       <div className="mainBox">
-        <nav className="pt-navbar .modifier pt-fixed-top ">
-          <div className="pt-navbar-group pt-align-left">
-            <div className="pt-navbar-heading"></div>
-            <div className={btnClassA}
-              onMouseEnter={ () => this._handleHover('foodDrink') }
-              onMouseLeave={ () => this._handleLeaveHover('foodDrink') }
-              >Food & Drink</div>
-            <div className={ btnClassB }
-                onMouseEnter={ () => this._handleHover('product') }
-                onMouseLeave={ () => this._handleLeaveHover('product') }
-                >Product</div>
-              <div className={btnClassC}
-                    onMouseEnter={ () => this._handleHover('other') }
-                    onMouseLeave={ () => this._handleLeaveHover('other')}
-                    >Other</div>
-          </div>
-          <div className="pt-navbar-group pt-align-right">
-            <div className={btnClassD}
-                  onMouseEnter={() => this._handleHover('about')}
-                  onMouseLeave={() => this._handleLeaveHover('about')}
-                  >About</div>
-            <span className="pt-navbar-divider"></span>
-              <div className={btnClassE}
-                    onMouseEnter={() => this._handleHover('contact')}
-                    onMouseLeave={() => this._handleLeaveHover('contact')}
-                    >Contact</div>
-          </div>
-        </nav>
+        <Nav category={ 'welcome' } />
       <ImageGallery
         items={ images }
         autoPlay= { true }

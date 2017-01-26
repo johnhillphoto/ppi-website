@@ -15,8 +15,12 @@ ReactDOM.render(
     <Route path='/' component={ App }>
       <IndexRoute component={ Home } />
       <Route path='about' component={ About } myName='John Hill' />
-      <Route path='gallery' component={ Gallery } category='foodDrink' />
+      <Route path='product' component={ Gallery } category='product' />
+      <Route path='foodDrink' component={ Gallery } category='foodDrink' />
+      <Route path='other' component={ Gallery } category='other' />
     </Route>
   </Router>,
   document.getElementById('app')
 );
+//
+// A subset of this.props.params that were directly specified in this component's route. For example, if the route's path is users/:userId and the URL is /users/123/portfolios/345 then this.props.routeParams will be {userId: '123'}, and this.props.params will be {userId: '123', portfolioId: '345'}.

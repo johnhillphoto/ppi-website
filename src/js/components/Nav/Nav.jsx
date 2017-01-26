@@ -16,20 +16,30 @@ export default class NavComponent extends Component {
       other: false,
       about: false,
       contact: false,
+      gridMode: this.props.gridMode,
+      welcome: false,
     };
 
     this.state[this.props.category] = true;
   }
 
-  _handleHover(hovered){
+  handleHover(hovered){
     const thing = {[hovered]: true}
     this.setState(thing);
   }
-  _handleLeaveHover(hovered){
+  handleLeaveHover(hovered){
     if (hovered !== this.props.category) {
       const thing = { [hovered]: false };
       this.setState(thing);
     }
+  }
+  handleGridClick() {
+    this.setState({ gridMode: (!this.state.gridMode) });
+    browserHistory.push({
+      pathname: this.props.category,
+      state: { gridMode: true },
+    });
+
   }
 
   render() {
@@ -55,37 +65,79 @@ export default class NavComponent extends Component {
       'catButtonsRight': true,
       'hoveredTopButton': this.state.contact,
     });
-
+    const btnClassF = classNames({
+      'catButtons': true,
+      'catButtonsRight': true,
+      'gridIcon': true,
+      'hoveredTopButton': this.state.gridIcon,
+      'hideGridIcon': this.state.gridMode,
+    });
+    let that = this;
     return (
-        <Navbar
-          collapseOnSelect
-          className='navBox'>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">P<span className='smaller'>roof </span>P<span className='smaller'>ositive </span>I<span className='smaller'>maging</span> <span className='smaller nocaps'>inc</span></a>
-            </Navbar.Brand>
-              <Navbar.Toggle />
-          </Navbar.Header>
+      <Navbar
+        collapseOnSelect
+        className='navBox'>
+        <Navbar.Header>
+            <Navbar.Toggle />
+        </Navbar.Header>
 
-          <Navbar.Collapse>
-                <Nav pullLeft>
-                  <NavItem eventKey={1} href="#">Food & Drink</NavItem>
-                  <NavItem eventKey={2} href="#">Product</NavItem>
-                  <NavDropdown eventKey={3} title="Other" id="basic-nav-dropdown">
-                    <MenuItem eventKey={3.1}>Some Photos</MenuItem>
-                    <MenuItem eventKey={3.2}>Some Photos 2</MenuItem>
-                    <MenuItem eventKey={3.3}>Some Photos 3</MenuItem>
-                    <MenuItem divider />
-                    <MenuItem eventKey={3.3}>Separated link</MenuItem>
-                  </NavDropdown>
-                </Nav>
-                <Nav pullRight>
-                  <NavItem className='catButtonsRight' eventKey={1} href="#">About</NavItem>
-                  <NavItem className='catButtonsRight' eventKey={2} href="#">Contact</NavItem>
-                </Nav>
-          </Navbar.Collapse>
+        <Navbar.Collapse>
+              <Nav pullLeft>
+                <NavItem
+                  eventKey={1}
+                  href='#'
+                  className={btnClassA}
+                  onMouseEnter={ () => this.handleHover('foodDrink') }
+                  onMouseLeave={ () => this.handleLeaveHover('foodDrink') }
+                  >Food & Drink</NavItem>
+                <NavItem
+                  eventKey={2}
+                  href="#"
+                  className={btnClassB}
+                  onMouseEnter={ () => this.handleHover('product') }
+                  onMouseLeave={ () => this.handleLeaveHover('product') }
+                  >Product</NavItem>
+                <NavDropdown
+                  eventKey={3}
+                  title="Other"
+                  id="basic-nav-dropdown"
+                  className={btnClassC}
+                  onMouseEnter={ () => this.handleHover('other') }
+                  onMouseLeave={ () => this.handleLeaveHover('other')}
+                  >
+                  <MenuItem eventKey={3.1}>Some Photos</MenuItem>
+                  <MenuItem eventKey={3.2}>Some Photos 2</MenuItem>
+                  <MenuItem eventKey={3.3}>Some Photos 3</MenuItem>
+                  <MenuItem divider />
+                  <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                </NavDropdown>
+              </Nav>
+              <Nav pullRight className='rightButtonGroup'>
+                <NavItem
+                  eventKey={ 1 }
+                  onClick={ () => {this.handleGridClick()} }
+                  className={ btnClassF }
+                  onMouseEnter={ () => this.handleHover('gridIcon') }
+                  onMouseLeave={ () => this.handleLeaveHover('gridIcon') }
+                  > </NavItem>
+                <NavItem
+                  eventKey={2}
+                  href="#"
+                  className={btnClassD}
+                  onMouseEnter={() => this.handleHover('about')}
+                  onMouseLeave={() => this.handleLeaveHover('about')}
+                  >About</NavItem>
+                <NavItem
+                  eventKey={3}
+                  href="#"
+                  className={btnClassE}
+                  onMouseEnter={() => this.handleHover('contact')}
+                  onMouseLeave={() => this.handleLeaveHover('contact')}
+                  >Contact</NavItem>
+              </Nav>
+        </Navbar.Collapse>
 
-        </Navbar>
+      </Navbar>
     );
   }
 

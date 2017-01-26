@@ -1,0 +1,74 @@
+.image-gallery {
+  position: fixed;
+  top: 0;
+}
+.image-gallery-fullscreen-button::before, .image-gallery-play-button::before, .image-gallery-left-nav::before, .image-gallery-right-nav::before {
+  text-shadow: none;
+  color: rgba(255, 255, 255, 0.6);
+}
+.image-gallery-fullscreen-button:focus, .image-gallery-play-button:focus, .image-gallery-left-nav:focus, .image-gallery-right-nav:focus {
+  outline: none;
+}
+.image-gallery-fullscreen-button:hover, .image-gallery-play-button:hover, .image-gallery-left-nav:hover, .image-gallery-right-nav:hover {
+  outline: none;
+}
+.image-gallery-fullscreen-button:hover::before, .image-gallery-play-button:hover::before, .image-gallery-left-nav:hover::before, .image-gallery-right-nav:hover::before {
+    color:: white;
+}
+
+@media screen and (min-aspect-ratio: 118/80) {
+  .image-gallery-bullets {
+    top: 90vh;
+  }
+  .image-gallery-fullscreen-button, .image-gallery-play-button {
+    top: 82vh;
+  }
+  .image-gallery-left-nav, .image-gallery-right-nav {
+    top: 50vh;
+  }
+  .image-gallery-slide img {
+    position: relative;
+    top: -2.7vw;
+  }
+}
+
+@media screen and (min-aspect-ratio: 125/80) {
+  .image-gallery-fullscreen-button, .image-gallery-play-button {
+    top: 79vh;
+  }
+  .image-gallery-slide img {
+    position: relative;
+    top: -3.7vw;
+  }
+}
+
+@media screen and (min-aspect-ratio: 132/80) {
+  .image-gallery-fullscreen-button, .image-gallery-play-button {
+    top: 69vh;
+  }
+  .image-gallery-slide img {
+    position: relative;
+    top: -4.7vw;
+  }
+}
+@media screen and (min-aspect-ratio: 140/80) {
+  .image-gallery-fullscreen-button, .image-gallery-play-button {
+    top: 59vh;
+  }
+  .image-gallery-slide img {
+    position: relative;
+    top: -5.7vw;
+  }
+}
+@media screen and (min-aspect-ratio: 148/80) {
+  .image-gallery-fullscreen-button, .image-gallery-play-button {
+    top: 39vh;
+  }
+  .image-gallery-slide img {
+    position: relative;
+    top: -6.7vw;
+  }
+    // .image-gallery-bullets .image-gallery-bullet.active {
+    //   background: red;
+    // }
+}
