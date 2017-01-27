@@ -1,16 +1,18 @@
 $logo-color: #2b3269;
+$nav-color: rgba(255, 255, 255, 0.86);
 
 
 .navBox {
   font-family: 'Raleway', sans-serif;
-  background-color: white;
+  background-color: $nav-color;
   box-shadow: none;
   margin-bottom: 0;
   z-index: 2000;
 
   .gridIcon {
-    background-image: url(https://s3.amazonaws.com/ppi-images/grid_icon.svg);
-    width: 50px;
+    background-image: url(https://s3.amazonaws.com/ppi-images/grid_icon-gray.svg);
+    width: 40px;
+    bottom: 2px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -19,8 +21,8 @@ $logo-color: #2b3269;
     visibility: hidden;
   }
 
-  .navbar-header {
-    background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-Vector-black-68.svg);
+  .navbar-header  {
+    background-image: url(https://s3.amazonaws.com/ppi-images/WEBSITE-HEADER-Logo-gray+type.svg);
     height: 50px;
     width: 300px;
     background-size:     contain;
@@ -33,7 +35,7 @@ $logo-color: #2b3269;
     margin-bottom: 0;
     position: absolute;
     z-index: 2000;
-    background-color: white;
+    // background-color: $nav-color;
   }
   .navbar-brand {
     font-weight: 500;
@@ -55,7 +57,7 @@ $logo-color: #2b3269;
     position: fixed;
     right: 10vw;
     z-index: 2000;
-    background-color: white;
+    background-color: $nav-color;
     padding-right: 15px;
     padding-left: 15px;
     overflow-x: hidden;
@@ -66,7 +68,7 @@ $logo-color: #2b3269;
 
   @media only screen and (max-width: 767px) {
     .navbar-collapse{
-      background-color: rgba(248,248,248,0.85);
+      background-color: $nav-color;
       position: fixed;
       width: auto;
       padding-right: 40px;

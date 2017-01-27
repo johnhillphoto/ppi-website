@@ -1,9 +1,11 @@
+$text-shadow: 0 2px 2px rgba(26, 26, 26, 0.14);
 .image-gallery {
   position: fixed;
   top: 0;
 }
 .image-gallery-fullscreen-button::before, .image-gallery-play-button::before, .image-gallery-left-nav::before, .image-gallery-right-nav::before {
-  text-shadow: none;
+  // text-shadow: none;
+  text-shadow: $text-shadow;
   color: rgba(255, 255, 255, 0.6);
 }
 .image-gallery-fullscreen-button:focus, .image-gallery-play-button:focus, .image-gallery-left-nav:focus, .image-gallery-right-nav:focus {

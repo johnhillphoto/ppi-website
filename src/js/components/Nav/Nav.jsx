@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import { browserHistory } from 'react-router';
 import { Button, Navbar, NavItem, NavDropdown, MenuItem, Nav } from 'react-bootstrap';
 import classNames from 'classnames';
@@ -19,8 +19,12 @@ export default class NavComponent extends Component {
       gridMode: this.props.gridMode,
       welcome: false,
     };
-
     this.state[this.props.category] = true;
+  }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      gridMode: nextProps.gridMode,
+    });
   }
 
   handleHover(hovered){
@@ -39,7 +43,15 @@ export default class NavComponent extends Component {
       pathname: this.props.category,
       state: { gridMode: true },
     });
-
+  }
+  handleNavClick(destination) {
+    browserHistory.push({
+      pathname: destination,
+      state: {
+        gridMode: false,
+        startIndex: 0,
+      },
+    });
   }
 
   render() {
@@ -77,68 +89,85 @@ export default class NavComponent extends Component {
       <Navbar
         collapseOnSelect
         className='navBox'>
-        <Navbar.Header>
-            <Navbar.Toggle />
+        <Navbar.Header
+          onClick={ () => this.handleNavClick('/') }
+        >
+          <Navbar.Brand>
+          </Navbar.Brand>
+          <Navbar.Toggle />
         </Navbar.Header>
 
         <Navbar.Collapse>
               <Nav pullLeft>
                 <NavItem
-                  eventKey={1}
+                  eventKey={ 'foodDrink' }
                   href='#'
-                  className={btnClassA}
+                  onSelect={ this.handleNavClick }
+                  className={ btnClassA }
                   onMouseEnter={ () => this.handleHover('foodDrink') }
                   onMouseLeave={ () => this.handleLeaveHover('foodDrink') }
-                  >Food & Drink</NavItem>
+                >Food & Drink
+                </NavItem>
                 <NavItem
-                  eventKey={2}
-                  href="#"
-                  className={btnClassB}
+                  eventKey={ 'product' }
+                  href='#'
+                  onSelect={ this.handleNavClick }
+                  className={ btnClassB }
                   onMouseEnter={ () => this.handleHover('product') }
                   onMouseLeave={ () => this.handleLeaveHover('product') }
-                  >Product</NavItem>
+                >Product
+                </NavItem>
                 <NavDropdown
-                  eventKey={3}
-                  title="Other"
-                  id="basic-nav-dropdown"
-                  className={btnClassC}
+                  eventKey={ 3 }
+                  title='Other'
+                  id='basic-nav-dropdown'
+                  className={ btnClassC }
                   onMouseEnter={ () => this.handleHover('other') }
-                  onMouseLeave={ () => this.handleLeaveHover('other')}
-                  >
-                  <MenuItem eventKey={3.1}>Some Photos</MenuItem>
-                  <MenuItem eventKey={3.2}>Some Photos 2</MenuItem>
-                  <MenuItem eventKey={3.3}>Some Photos 3</MenuItem>
+                  onMouseLeave={ () => this.handleLeaveHover('other') }
+                >
+                  <MenuItem eventKey={ 3.1 }>Some Photos</MenuItem>
+                  <MenuItem eventKey={ 3.2 }>Some Photos 2</MenuItem>
+                  <MenuItem eventKey={ 3.3 }>Some Photos 3</MenuItem>
                   <MenuItem divider />
-                  <MenuItem eventKey={3.3}>Separated link</MenuItem>
+                  <MenuItem eventKey={ 3.3 }>Separated link</MenuItem>
                 </NavDropdown>
               </Nav>
               <Nav pullRight className='rightButtonGroup'>
                 <NavItem
                   eventKey={ 1 }
-                  onClick={ () => {this.handleGridClick()} }
+                  onClick={ () => { this.handleGridClick(); } }
                   className={ btnClassF }
                   onMouseEnter={ () => this.handleHover('gridIcon') }
                   onMouseLeave={ () => this.handleLeaveHover('gridIcon') }
                   > </NavItem>
                 <NavItem
-                  eventKey={2}
-                  href="#"
-                  className={btnClassD}
-                  onMouseEnter={() => this.handleHover('about')}
-                  onMouseLeave={() => this.handleLeaveHover('about')}
+                  eventKey={ 'about' }
+                  href='#'
+                  onSelect={this.handleNavClick}
+                  className={ btnClassD }
+                  onMouseEnter={ () => this.handleHover('about') }
+                  onMouseLeave={ () => this.handleLeaveHover('about') }
                   >About</NavItem>
                 <NavItem
-                  eventKey={3}
-                  href="#"
-                  className={btnClassE}
-                  onMouseEnter={() => this.handleHover('contact')}
-                  onMouseLeave={() => this.handleLeaveHover('contact')}
-                  >Contact</NavItem>
+                  eventKey={ 'contact' }
+                  href='#'
+                  onSelect={this.handleNavClick}
+                  className={ btnClassE }
+                  onMouseEnter={ () => this.handleHover('contact') }
+                  onMouseLeave={ () => this.handleLeaveHover('contact') }
+                >Contact</NavItem>
               </Nav>
         </Navbar.Collapse>
 
       </Navbar>
     );
   }
-
+}
+NavComponent.defaultProps = {
+  gridMode: false,
+  category: 'foodDrink',
+};
+NavComponent.propTypes = {
+  category: PropTypes.string,
+  gridMode: PropTypes.bool,
 }

@@ -2,18 +2,15 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import Nav from '../../components/Nav/Nav.jsx';
 import ImageGallery from 'react-image-gallery';
+import classNames from 'classnames';
 import css from '../../../../node_modules/react-image-gallery/styles/css/image-gallery.css';
+import { fileNames } from './fileNames';
 
-import {fileNames} from './fileNames.jsx';
-const images = fileNames;
-// import fileNamesTest from './fileNames.json';
-// let fileNamesTestParsed = Hjson.parse(fileNamesTest);
-// console.log(fileNamesTest);
-// require("!style-loader!css-loader!sass-loader!./Home.scss");
 require('./Home.scss');
 require('../Gallery/imageGallery.scss');
 
-import classNames from 'classnames';
+const images = fileNames;
+
 
 export default class HomePage extends Component {
   constructor (props) {
@@ -73,7 +70,10 @@ export default class HomePage extends Component {
   render() {
     return (
       <div className="mainBox">
-        <Nav category={ 'welcome' } />
+        <Nav
+          category={ 'welcome' }
+          gridMode
+        />
       <ImageGallery
         items={ images }
         autoPlay= { true }
