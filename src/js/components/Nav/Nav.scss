@@ -35,7 +35,6 @@ $nav-color: rgba(255, 255, 255, 0.86);
     margin-bottom: 0;
     position: absolute;
     z-index: 3000;
-    // background-color: $nav-color;
   }
   .navbar-brand {
     font-weight: 500;
@@ -66,24 +65,24 @@ $nav-color: rgba(255, 255, 255, 0.86);
     background-color: rgba(167, 167, 167, 0.16);
   }
 
-  // @media only screen and (max-width: 767px) {
-  //   .navbar-collapse{
-  //     background-color: $nav-color;
-  //     position: fixed;
-  //     z-index: 3000;
-  //     width: auto;
-  //     padding-right: 40px;
-  //     padding-left: 40px;
-  //     right: 10vw;
-  //   }
-  // }
-  // @media only screen and (min-width: 768px) {
-  //   .rightButtonGroup {
-  //     position: fixed;
-  //     right: 5vw;
-  //   }
-  // }
-  //
+  @media only screen and (max-width: 767px) {
+    .navbar-collapse{
+      background-color: $nav-color;
+      position: fixed;
+      z-index: 3000;
+      width: auto;
+      padding-right: 40px;
+      padding-left: 40px;
+      right: 10vw;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .rightButtonGroup {
+      position: fixed;
+      right: 5vw;
+    }
+  }
+
   @media only screen and (min-width: 993px) {
     height: 68px;
 
