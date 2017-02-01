@@ -1,7 +1,6 @@
 .aboutBoxOverall {
   .navBox {
     background-color: white;
-    // z-index: 3000;
   }
 }
 .aboutBox {
@@ -37,4 +36,11 @@
       width: 100%;
     }
   }
+  @media only screen and (max-width: 993px) {
+      padding-top: 50px;
+      .aboutPhotoBox {
+        top: 50px;
+      }
+  }
+
 }

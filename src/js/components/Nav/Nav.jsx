@@ -88,6 +88,8 @@ export default class NavComponent extends Component {
     return (
       <Navbar
         collapseOnSelect
+        fixedTop
+        fluid
         className='navBox'>
         <Navbar.Header
           onClick={ () => this.handleNavClick('/') }
