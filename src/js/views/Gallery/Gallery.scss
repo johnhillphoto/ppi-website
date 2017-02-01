@@ -2,3 +2,11 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 200;
 }
+#Gallery {
+  margin-top: 68px;
+}
+@media only screen and (max-width: 993px) {
+  #Gallery {
+    margin-top: 50px;
+  }
+}
