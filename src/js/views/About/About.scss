@@ -1,0 +1,40 @@
+.aboutBoxOverall {
+  .navBox {
+    background-color: white;
+    // z-index: 3000;
+  }
+}
+.aboutBox {
+  z-index: 500;
+  padding-top: 68px;
+  .aboutPhotoBox {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 68px;
+    left: 0;
+    // z-index: 2000;
+    .aboutPhotoContent {
+      position: relative;
+      float: left;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background-image: url('https://s3.amazonaws.com/ppi-images/about/06-Summer-Maple-Leaf_03-1250.jpg');
+      background-size: cover;
+      background-position: center center;
+      margin: 0 auto;
+      background-repeat: no-repeat;
+    }
+  }
+  .abouTextBox {
+    width: 75%;
+    background-color: white;
+    position: relative;
+    margin: 0 auto;
+    p {
+      width: 100%;
+    }
+  }
+}

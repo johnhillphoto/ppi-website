@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import App from './views/App';
 import Home from './views/Home/Home';
 import About from './views/About/About';
+import Contact from './views/Contact/Contact';
 import Gallery from './views/Gallery/Gallery';
 
 require('!style!css!@blueprintjs/core/dist/blueprint.css');
@@ -14,7 +15,8 @@ ReactDOM.render(
   <Router history={ browserHistory }>
     <Route path='/' component={ App }>
       <IndexRoute component={ Home } />
-      <Route path='about' component={ About } myName='John Hill' />
+      <Route path='about' component={ About } />
+      <Route path='contact' component={ Contact } />
       <Route path='product' component={ Gallery } category='product' />
       <Route path='foodDrink' component={ Gallery } category='foodDrink' />
       <Route path='other' component={ Gallery } category='other' />
