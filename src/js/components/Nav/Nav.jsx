@@ -89,8 +89,8 @@ export default class NavComponent extends Component {
       <Navbar
         collapseOnSelect
         fixedTop
-        fluid
-        className='navBox'>
+        className='navBox'
+      >
         <Navbar.Header
           onClick={ () => this.handleNavClick('/') }
         >
@@ -100,65 +100,66 @@ export default class NavComponent extends Component {
         </Navbar.Header>
 
         <Navbar.Collapse>
-              <Nav pullLeft>
-                <NavItem
-                  eventKey={ 'foodDrink' }
-                  href='#'
-                  onSelect={ this.handleNavClick }
-                  className={ btnClassA }
-                  onMouseEnter={ () => this.handleHover('foodDrink') }
-                  onMouseLeave={ () => this.handleLeaveHover('foodDrink') }
-                >Food & Drink
-                </NavItem>
-                <NavItem
-                  eventKey={ 'product' }
-                  href='#'
-                  onSelect={ this.handleNavClick }
-                  className={ btnClassB }
-                  onMouseEnter={ () => this.handleHover('product') }
-                  onMouseLeave={ () => this.handleLeaveHover('product') }
-                >Product
-                </NavItem>
-                <NavDropdown
-                  eventKey={ 3 }
-                  title='Other'
-                  id='basic-nav-dropdown'
-                  className={ btnClassC }
-                  onMouseEnter={ () => this.handleHover('other') }
-                  onMouseLeave={ () => this.handleLeaveHover('other') }
-                >
-                  <MenuItem eventKey={ 3.1 }>Some Photos</MenuItem>
-                  <MenuItem eventKey={ 3.2 }>Some Photos 2</MenuItem>
-                  <MenuItem eventKey={ 3.3 }>Some Photos 3</MenuItem>
-                  <MenuItem divider />
-                  <MenuItem eventKey={ 3.3 }>Separated link</MenuItem>
-                </NavDropdown>
-              </Nav>
-              <Nav pullRight className='rightButtonGroup'>
-                <NavItem
-                  eventKey={ 1 }
-                  onClick={ () => { this.handleGridClick(); } }
-                  className={ btnClassF }
-                  onMouseEnter={ () => this.handleHover('gridIcon') }
-                  onMouseLeave={ () => this.handleLeaveHover('gridIcon') }
-                  > </NavItem>
-                <NavItem
-                  eventKey={ 'about' }
-                  href='#'
-                  onSelect={this.handleNavClick}
-                  className={ btnClassD }
-                  onMouseEnter={ () => this.handleHover('about') }
-                  onMouseLeave={ () => this.handleLeaveHover('about') }
-                  >About</NavItem>
-                <NavItem
-                  eventKey={ 'contact' }
-                  href='#'
-                  onSelect={this.handleNavClick}
-                  className={ btnClassE }
-                  onMouseEnter={ () => this.handleHover('contact') }
-                  onMouseLeave={ () => this.handleLeaveHover('contact') }
-                >Contact</NavItem>
-              </Nav>
+          <Nav pullLeft>
+            <NavItem
+              eventKey={ 'foodDrink' }
+              href='#'
+              onSelect={ this.handleNavClick }
+              className={ btnClassA }
+              onMouseEnter={ () => this.handleHover('foodDrink') }
+              onMouseLeave={ () => this.handleLeaveHover('foodDrink') }
+            >Food & Drink
+            </NavItem>
+            <NavItem
+              eventKey={ 'product' }
+              href='#'
+              onSelect={ this.handleNavClick }
+              className={ btnClassB }
+              onMouseEnter={ () => this.handleHover('product') }
+              onMouseLeave={ () => this.handleLeaveHover('product') }
+            >Product
+            </NavItem>
+            <NavDropdown
+              eventKey={ 3 }
+              title='Other'
+              id='basic-nav-dropdown'
+              className={ btnClassC }
+              onMouseEnter={ () => this.handleHover('other') }
+              onMouseLeave={ () => this.handleLeaveHover('other') }
+            >
+              <MenuItem eventKey={ 3.1 }>Some Photos</MenuItem>
+              <MenuItem eventKey={ 3.2 }>Some Photos 2</MenuItem>
+              <MenuItem eventKey={ 3.3 }>Some Photos 3</MenuItem>
+              <MenuItem divider />
+              <MenuItem eventKey={ 3.3 }>Separated link</MenuItem>
+            </NavDropdown>
+          </Nav>
+          <Nav pullRight className='rightButtonGroup'>
+            <NavItem
+              eventKey={ 1 }
+              onClick={ () => { this.handleGridClick(); } }
+              className={ btnClassF }
+              onMouseEnter={ () => this.handleHover('gridIcon') }
+              onMouseLeave={ () => this.handleLeaveHover('gridIcon') }
+            >
+            </NavItem>
+            <NavItem
+              eventKey={ 'about' }
+              href='#'
+              onSelect={this.handleNavClick}
+              className={ btnClassD }
+              onMouseEnter={ () => this.handleHover('about') }
+              onMouseLeave={ () => this.handleLeaveHover('about') }
+              >About</NavItem>
+            <NavItem
+              eventKey={ 'contact' }
+              href='#'
+              onSelect={this.handleNavClick}
+              className={ btnClassE }
+              onMouseEnter={ () => this.handleHover('contact') }
+              onMouseLeave={ () => this.handleLeaveHover('contact') }
+            >Contact</NavItem>
+          </Nav>
         </Navbar.Collapse>
 
       </Navbar>

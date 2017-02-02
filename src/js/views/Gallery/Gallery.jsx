@@ -5,7 +5,7 @@ import ImageGallery from 'react-image-gallery';
 import { fileNames } from './fileNames';
 import Nav from '../../components/Nav/Nav.jsx';
 
-require("!style-loader!css-loader!sass-loader!./Gallery.scss");
+require('./Gallery.scss');
 
 export default class GalleryWrapper extends Component {
   constructor(props) {
