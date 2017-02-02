@@ -18,6 +18,7 @@ $nav-color: rgba(255, 255, 255, 0.86);
     background-position: center bottom;
     // margin-top: 12px;
   }
+
   .hideGridIcon {
     visibility: hidden;
   }
@@ -106,5 +107,40 @@ $nav-color: rgba(255, 255, 255, 0.86);
       text-align: center;
     }
 
+  }
+}
+// below are located outside of nav bar, float on top for functionality
+.clickBox {
+  width: 300px;
+  height: 50px;
+  background-color: rgba(255,255,255,0.0);
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 6000;
+}
+.extraGrid {
+  background-image: url(https://s3.amazonaws.com/ppi-images/grid_icon-gray.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  width: 40px;
+  height: 40px;
+  top: 0;
+  left: 62vw;
+  margin-top: 5px;
+  position: fixed;
+  z-index: 6000;
+}
+.hideGridIconExtra {
+  visibility: hidden;
+}
+@media only screen and (min-width: 767px) {
+  .extraGrid {
+    visibility: hidden;
+  }
+  .clickBox {
+    height: 68px;
+    width: 425px;
   }
 }

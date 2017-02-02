@@ -17,6 +17,8 @@ export default class NavComponent extends Component {
       about: false,
       contact: false,
       gridMode: this.props.gridMode,
+      gridIcon: false,
+      extraGrid: false,
       welcome: false,
     };
     this.state[this.props.category] = true;
@@ -84,16 +86,20 @@ export default class NavComponent extends Component {
       'hoveredTopButton': this.state.gridIcon,
       'hideGridIcon': this.state.gridMode,
     });
+    const extraGrid = classNames({
+      'extraGrid': true,
+      'hoveredTopButton': this.state.extraGrid,
+      'hideGridIconExtra': this.state.gridMode,
+    });
     let that = this;
     return (
+      <div>
       <Navbar
         collapseOnSelect
         fixedTop
         className='navBox'
       >
-        <Navbar.Header
-          onClick={ () => this.handleNavClick('/') }
-        >
+        <Navbar.Header>
           <Navbar.Brand>
           </Navbar.Brand>
           <Navbar.Toggle />
@@ -163,6 +169,17 @@ export default class NavComponent extends Component {
         </Navbar.Collapse>
 
       </Navbar>
+      <div
+        className={ extraGrid }
+        onClick={ () => { this.handleGridClick(); } }
+      >
+      </div>
+      <div
+        className="clickBox"
+        onClick={ () => this.handleNavClick('/') }
+      >
+      </div>
+    </div>
     );
   }
 }
@@ -173,4 +190,4 @@ NavComponent.defaultProps = {
 NavComponent.propTypes = {
   category: PropTypes.string,
   gridMode: PropTypes.bool,
-}
+};
