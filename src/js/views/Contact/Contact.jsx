@@ -28,11 +28,11 @@ export default class Contact extends Component {
       return (
         <div>
           <Nav
-            category={ 'about' }
+            category={ 'contact' }
             gridMode
           />
-          <div className='aboutBox'>
-            <h1>In about</h1>
+        <div className='contactBox'>
+            <h1>In contact</h1>
           </div>
         </div>
       );

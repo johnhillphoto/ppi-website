@@ -1,9 +1,12 @@
+// https://s3.amazonaws.com/ppi-images/about/40118-Organic-Eggs-in-Bowl-0765.jpg
+
 .aboutBoxOverall {
   .navBox {
     background-color: white;
   }
 }
 .aboutBox {
+  position: relative;
   z-index: 500;
   padding-top: 68px;
   .aboutPhotoBox {
@@ -29,11 +32,36 @@
   }
   .abouTextBox {
     width: 75%;
-    background-color: white;
+    background-color: rgba(255,255,255, 0.92);
     position: relative;
     margin: 0 auto;
+    top: 32px;
+    padding: 55px;
+    h2, h3{
+      font-family: 'Raleway', sans-serif;
+      color: #777;
+    }
+    h2 {
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 18px;
+    }
     p {
       width: 100%;
+      font-family: 'Roboto', sans-serif;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 1.7;
+      color: #777;
+    }
+    .image1 {
+      width: 314px;
+      height: auto;
+      float: right;
+      margin-left: 25px;
     }
   }
   @media only screen and (max-width: 993px) {
@@ -42,5 +70,16 @@
         top: 50px;
       }
   }
+}// end about box
 
-}
+// //iphone only
+// @media only screen
+//   and (min-device-width: 320px)
+//   and (max-device-width: 568px)
+//   and (-webkit-min-device-pixel-ratio: 2) {
+//     .aboutBox{
+//       .abouTextBox {
+//         background-color: pink;
+//       }
+//     }
+// }

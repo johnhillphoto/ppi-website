@@ -95,7 +95,6 @@ $nav-color: rgba(255, 255, 255, 0.86);
       height: 68px;
       width: 425px;
     }
-
     .navbar-brand {
       visibility: hidden;
     }
@@ -135,6 +134,7 @@ $nav-color: rgba(255, 255, 255, 0.86);
 .hideGridIconExtra {
   visibility: hidden;
 }
+//this hides the extaGrid Button, sizes the clickBox
 @media only screen and (min-width: 767px) {
   .extraGrid {
     visibility: hidden;
@@ -142,5 +142,8 @@ $nav-color: rgba(255, 255, 255, 0.86);
   .clickBox {
     height: 68px;
     width: 425px;
+  }
+  .catButtonsRight {
+    width: 80px;
   }
 }
